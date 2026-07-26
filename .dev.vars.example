@@ -1,0 +1,6 @@
+# Secrets for local Cloudflare preview (`wrangler dev` / `npm run cf:preview`).
+# Copy to `.dev.vars` (gitignored). In production, set these with
+# `wrangler secret put <NAME>` instead — see DEPLOYMENT.md.
+
+ADMIN_PASSWORD="willa2026"
+AUTH_SECRET="change-me-to-a-long-random-string"

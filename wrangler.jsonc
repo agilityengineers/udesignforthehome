@@ -1,0 +1,40 @@
+{
+  // Cloudflare Workers configuration for the OpenNext build.
+  // Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+  // Full first-deploy walkthrough: see DEPLOYMENT.md.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "udesignforthehome",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-12-30",
+  // Required by @opennextjs/cloudflare (Next.js needs Node.js APIs).
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Static assets emitted by the OpenNext build.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  // Non-secret vars. Secrets (ADMIN_PASSWORD, AUTH_SECRET) are set with
+  // `wrangler secret put` — never commit them. CF_WORKERS tells lib/db.ts to
+  // use the D1 driver adapter.
+  "vars": {
+    "CF_WORKERS": "1",
+    "NEXT_PUBLIC_SITE_URL": "https://udesignforthehome.com"
+  },
+
+  // D1 (SQLite-compatible) database. Create it with:
+  //   npx wrangler d1 create udfh-db
+  // then paste the returned database_id below.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "udfh-db",
+      "database_id": "PASTE_YOUR_D1_DATABASE_ID_HERE"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}

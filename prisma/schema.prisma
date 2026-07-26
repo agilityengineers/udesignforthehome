@@ -1,0 +1,47 @@
+// U Design For The Home — data model.
+//
+// Provider is SQLite, which is portable to Cloudflare D1 (a SQLite-compatible
+// serverless database) with no schema changes. Local development uses a plain
+// SQLite file (prisma/dev.db); production uses the D1 binding "DB" via the
+// Prisma driver adapter. See src/lib/db.ts and DEPLOYMENT.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// A consultation request submitted through the public booking form.
+model Lead {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String   @default("")
+  zip         String   @default("")
+  projectType String   @default("")
+  message     String   @default("")
+  /// One of: New | Contacted | Scheduled | Completed
+  status      String   @default("New")
+  /// Free-text internal notes, auto-saved from the admin CRM.
+  notes       String   @default("")
+  createdAt   DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+/// Editable site content (a single-row store). Blank fields fall back to the
+/// built-in default copy at render time. Server-rendered into the public pages.
+model SiteSettings {
+  id           Int      @id @default(1)
+  phone        String   @default("")
+  email        String   @default("")
+  heroHeadline String   @default("")
+  heroSubhead  String   @default("")
+  /// JSON-encoded array of { quote, attribution } (up to 3). Empty = defaults.
+  testimonials String   @default("[]")
+  updatedAt    DateTime @updatedAt
+}
