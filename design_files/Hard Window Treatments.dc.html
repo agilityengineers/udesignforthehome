@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shutters &amp; Blinds · U Design For The Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FAF7F1; color: #2A261F; font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+  :root { --accent: #7D8471; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #2A261F; }
+</style>
+</helmet>
+
+<header style="display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:1px solid rgba(42,38,31,0.12)">
+  <a href="U Design For The Home.dc.html" style="display:flex;flex-direction:column;gap:2px">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.04em;color:#2A261F">U Design For The Home</span>
+    <span style="font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#6B6357">Willa Parsons · Window Treatments</span>
+  </a>
+  <a href="U Design For The Home.dc.html" style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:2px">Back to Home</a>
+</header>
+
+<main>
+<section data-screen-label="Intro" style="padding:96px 48px 72px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Hard Window Treatments</p>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,56px);font-weight:500;line-height:1.1;text-wrap:balance">Shutters and blinds, built like furniture.</h1>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:#6B6357;text-wrap:pretty">These are the treatments you touch every morning. As a registered Norman&reg; dealer, we bring their full shutter and blind collection to your door, hold the samples in your light, and stand behind every measurement with our Product Guarantee.</p>
+    </div>
+    <img src="https://normanusa.com/app/uploads/2020/07/510-x-460_Ultra_Shutter_Bathroom.jpg.webp" alt="Norman shutters in a bright bathroom" style="width:100%;height:420px;object-fit:cover;display:block">
+  </div>
+</section>
+
+<section data-screen-label="Collection" style="padding:32px 48px 96px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 40px">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <img src="{{ it.img }}" alt="{{ it.name }}" style="width:100%;height:280px;object-fit:cover;display:block">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600">{{ it.name }}</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">{{ it.body }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="CTA" style="background:#2A261F;color:#FAF7F1;padding:96px 48px;text-align:center">
+  <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px">
+    <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.15;color:#FAF7F1;text-wrap:balance">See them in your own light before you decide.</h2>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(250,247,241,0.75);text-wrap:pretty">The showroom comes to you. Willa brings the samples, takes the measurements, and the Product Guarantee covers the rest.</p>
+    <a href="U Design For The Home.dc.html#consultation" style="background:var(--accent);color:#FAF7F1;padding:16px 36px;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:#FAF7F1;color:#2A261F">Book Your In-Home Consultation</a>
+  </div>
+</section>
+</main>
+
+<footer style="background:#221F19;color:rgba(250,247,241,0.65);padding:40px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+    <p style="margin:0;font-size:12px;letter-spacing:0.08em">U Design For The Home · Serving Fredericksburg &amp; the Mid-Atlantic · Registered Dealer &amp; Insured</p>
+    <p style="margin:0;font-size:11px;color:rgba(250,247,241,0.4)">Product imagery courtesy of Norman&reg; USA</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { items: [
+      { name: 'Normandy\u00ae Shutters', img: 'https://normanusa.com/app/uploads/2020/03/SHUTTER-Normandy.jpg',
+        body: '100% premium hardwood from sustainably farmed forests. The right choice for historic homes and specialty shapes, French doors included.' },
+      { name: 'Woodlore\u00ae Plus Shutters', img: 'https://normanusa.com/app/uploads/2020/03/SHUTTER-Woodlore-Plus.jpg',
+        body: 'A hybrid wood composite that will not chip or crack over time, with a waterproof option for baths and kitchens.' },
+      { name: 'Brightwood\u2122 Shutters', img: 'https://normanusa.com/app/uploads/2023/01/510-x-460_Brightwood.jpg.webp',
+        body: 'The luxury of painted wood shutters, priced for whole-house projects. Our most requested finish for newer homes.' },
+      { name: 'Ultimate\u2122 Normandy\u00ae Wood Blinds', img: 'https://normanusa.com/app/uploads/2022/05/510x460-Normandy-blind-office.jpg.webp',
+        body: 'Real wood blinds cut from the same hardwood as Normandy shutters, in a deep range of paints and stains.' },
+      { name: 'Ultimate\u2122 Faux Wood Blinds', img: 'https://normanusa.com/app/uploads/2022/01/510-X-460-Thumbnail-Image-Ultimate-FW-Blinds.jpg.webp',
+        body: 'The smoothest-operating blind on the market, with light control and privacy that punch well above the price.' },
+      { name: 'CityLights\u2122 Aluminum Blinds', img: 'https://normanusa.com/app/uploads/2023/06/510x460-Thumbnails-Citylight-Aluminum-Blinds-1.jpg.webp',
+        body: 'Crisp, durable aluminum for modern spaces. Exceptional light control in a slim profile.' }
+    ] };
+  }
+}
+</script>
+</body>
+</html>

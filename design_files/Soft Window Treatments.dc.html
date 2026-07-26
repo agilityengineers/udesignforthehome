@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shades &amp; Drapery · U Design For The Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FAF7F1; color: #2A261F; font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+  :root { --accent: #7D8471; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #2A261F; }
+</style>
+</helmet>
+
+<header style="display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:1px solid rgba(42,38,31,0.12)">
+  <a href="U Design For The Home.dc.html" style="display:flex;flex-direction:column;gap:2px">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.04em;color:#2A261F">U Design For The Home</span>
+    <span style="font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#6B6357">Willa Parsons · Window Treatments</span>
+  </a>
+  <a href="U Design For The Home.dc.html" style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:2px">Back to Home</a>
+</header>
+
+<main>
+<section data-screen-label="Intro" style="padding:96px 48px 72px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Soft Window Treatments</p>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,56px);font-weight:500;line-height:1.1;text-wrap:balance">Fabric is where a room gets its voice.</h1>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:#6B6357;text-wrap:pretty">Shades, sheers, and Romans from the Norman&reg; collection, chosen with real swatches held to your window at the hour you actually live in the room. This is where we do our favorite work.</p>
+    </div>
+    <img src="https://normanusa.com/app/uploads/2022/05/Right-Image-1440-x-1200-Roman.jpg.webp" alt="Centerpiece Roman shades in a warm living room" style="width:100%;height:420px;object-fit:cover;display:block">
+  </div>
+</section>
+
+<section data-screen-label="Collection" style="padding:32px 48px 96px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 40px">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <img src="{{ it.img }}" alt="{{ it.name }}" style="width:100%;height:280px;object-fit:cover;display:block">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600">{{ it.name }}</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">{{ it.body }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="CTA" style="background:#2A261F;color:#FAF7F1;padding:96px 48px;text-align:center">
+  <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px">
+    <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.15;color:#FAF7F1;text-wrap:balance">Swatches mean nothing until they meet your light.</h2>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(250,247,241,0.75);text-wrap:pretty">Willa brings the fabric collection to your home and holds each one to your window. The right answer becomes obvious.</p>
+    <a href="U Design For The Home.dc.html#consultation" style="background:var(--accent);color:#FAF7F1;padding:16px 36px;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:#FAF7F1;color:#2A261F">Book Your In-Home Consultation</a>
+  </div>
+</section>
+</main>
+
+<footer style="background:#221F19;color:rgba(250,247,241,0.65);padding:40px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+    <p style="margin:0;font-size:12px;letter-spacing:0.08em">U Design For The Home · Serving Fredericksburg &amp; the Mid-Atlantic · Registered Dealer &amp; Insured</p>
+    <p style="margin:0;font-size:11px;color:rgba(250,247,241,0.4)">Product imagery courtesy of Norman&reg; USA</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { items: [
+      { name: 'Centerpiece\u2122 Roman Shades', img: 'https://normanusa.com/app/uploads/2020/05/Aerolite-RomanShade.jpg',
+        body: 'Soft, luxury fabrics with exquisite tailoring. The spirit of custom drapery in a sleeker profile.' },
+      { name: 'PerfectSheer\u2122 Shades', img: 'https://normanusa.com/app/uploads/2020/05/SHADES-PerfectSheer.jpg',
+        body: 'Banded, layered sheers that turn afternoon light into something worth watching.' },
+      { name: 'SmartDrape\u00ae', img: 'https://normanusa.com/app/uploads/2020/05/SHADES-SmartDrape.jpg',
+        body: 'Soft like drapery, delicately architectural. Walk through it even while it is closed — made for sliding doors.' },
+      { name: 'Soluna\u2122 Roller Shades', img: 'https://normanusa.com/app/uploads/2020/03/SHADES-Soluna-Roller.jpg',
+        body: 'A rainbow of fabrics in a clean modern line, with cordless PrecisionLift or motorized control.' },
+      { name: 'Portrait\u2122 Honeycomb Shades', img: 'https://normanusa.com/app/uploads/2020/03/SHADES-HoneyComb.jpg',
+        body: 'Over 500 fabrics and cellular insulation that earns its keep every season. Streamlined, made for every window.' },
+      { name: 'SmartFold\u2122 Shades', img: 'https://normanusa.com/app/uploads/2026/03/SmartFold-sm.jpg.webp',
+        body: 'Sculpted fabric folds with effortless control. Modern elegance, quietly done.' }
+    ] };
+  }
+}
+</script>
+</body>
+</html>

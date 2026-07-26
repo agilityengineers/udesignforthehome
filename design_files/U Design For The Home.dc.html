@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U Design For The Home · Custom Window Treatments, Fredericksburg VA</title>
+<meta name="description" content="Designer-led custom window treatments for Fredericksburg, Northern Virginia, and the DC region. Mobile showroom, Product Guarantee, installed in 15 business days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAF7F1; color: #2A261F; font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+  :root { --accent: #7D8471; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #2A261F; }
+  input, select, textarea, button { font-family: 'Hanken Grotesk', sans-serif; }
+  @keyframes scrollCue { 0%,100% { transform: translateY(0); opacity: .9; } 50% { transform: translateY(8px); opacity: .4; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#2A261F">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2A261F"></rect><text x="50" y="62" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#FAF7F1">U</text></svg>
+</template>
+<header style="position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:28px 48px" data-screen-label="Header">
+  <div style="display:flex;flex-direction:column;gap:2px">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.04em;color:#FAF7F1">U Design For The Home</span>
+    <span style="font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(250,247,241,0.7)">Willa Parsons · Window Treatments</span>
+  </div>
+  <a href="#consultation" style="border:1px solid rgba(250,247,241,0.5);color:#FAF7F1;padding:10px 22px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase" style-hover="background:#FAF7F1;color:#2A261F">Book a Consultation</a>
+</header>
+
+<main>
+<!-- HERO — TODO Willa: drop real footage poster (custom drapery, motorized shades opening, in-home consult) into the slot below. Video swap happens at dev handoff. -->
+<section data-screen-label="Hero" style="position:relative;height:100vh;min-height:640px;background:#2A261F">
+  <div style="position:absolute;inset:0">
+    <image-slot id="hero-bg" shape="rect" placeholder="Hero footage — drapery in golden-hour light, motorized shades opening" src="https://normanusa.com/app/uploads/2022/05/Right-Image-1440-x-1200-SD.jpg.webp" credit="Norman® USA — PerfectSheer™ Shades" credit-href="https://normanusa.com/window-treatments/shades/"></image-slot>
+  </div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top, rgba(26,23,18,0.82) 0%, rgba(26,23,18,0.35) 45%, rgba(26,23,18,0.25) 100%)"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;pointer-events:none;padding:0 48px 96px;display:flex;justify-content:center">
+    <div style="max-width:880px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px">
+      <p style="margin:0;font-size:12px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(250,247,241,0.85)">Fredericksburg &nbsp;•&nbsp; Northern Virginia &nbsp;•&nbsp; Design-Led Window Treatments</p>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,5.4vw,72px);line-height:1.08;color:#FAF7F1;text-wrap:balance">{{ heroHeadline }}</h1>
+      <p style="margin:0;max-width:560px;font-size:17px;line-height:1.6;color:rgba(250,247,241,0.85);text-wrap:pretty">{{ heroSubhead }}</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;pointer-events:auto;margin-top:8px">
+        <a href="#consultation" style="background:var(--accent);color:#FAF7F1;padding:15px 32px;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:#FAF7F1;color:#2A261F">Book Your In-Home Consultation</a>
+        <a href="#work" style="border:1px solid rgba(250,247,241,0.6);color:#FAF7F1;padding:15px 32px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:rgba(250,247,241,0.12)">See Our Product</a>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);pointer-events:none">
+    <svg width="18" height="28" viewBox="0 0 18 28" style="animation:scrollCue 2.4s ease-in-out infinite"><path d="M9 4 v18 M4 17 l5 6 5-6" fill="none" stroke="rgba(250,247,241,0.8)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </div>
+</section>
+
+<section data-screen-label="The Willa Difference" style="border-bottom:1px solid rgba(42,38,31,0.12);padding:72px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;color:var(--accent)">01</span>
+      <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600">Designer-Led, Not Dealer-Led</h3>
+      <p style="margin:0;font-size:14px;line-height:1.65;color:#6B6357;text-wrap:pretty">Every recommendation starts with your room, your light, your life. Not a sales quota.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;color:var(--accent)">02</span>
+      <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600">Showroom-in-a-Van</h3>
+      <p style="margin:0;font-size:14px;line-height:1.65;color:#6B6357;text-wrap:pretty">We bring full-size samples to your home, so you see every fabric in your actual light.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;color:var(--accent)">03</span>
+      <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600">Product Guarantee</h3>
+      <p style="margin:0;font-size:14px;line-height:1.65;color:#6B6357;text-wrap:pretty">We measure. We install. If anything is off, we make it right at no cost to you.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;color:var(--accent)">04</span>
+      <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600">Made in the USA, In 15 Days</h3>
+      <p style="margin:0;font-size:14px;line-height:1.65;color:#6B6357;text-wrap:pretty">US-based fabrication, professionally installed within 15 business days of your order.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" data-screen-label="Products &amp; Services" style="padding:104px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:88px">
+    <div style="max-width:640px">
+      <p style="margin:0 0 14px;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Products &amp; Services</p>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:500;line-height:1.15;text-wrap:balance">Four ways we dress a window. One standard of craft.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;direction:ltr">
+      <div style="height:420px;direction:ltr">
+        <image-slot id="prod-hard" shape="rect" placeholder="Plantation shutters in a bright living room" src="https://normanusa.com/app/uploads/2020/07/510-x-460_Ultra_Shutter_Bathroom.jpg.webp" credit="Norman® USA — Shutters" credit-href="https://normanusa.com/window-treatments/shutters/"></image-slot>
+      </div>
+      <div style="direction:ltr;display:flex;flex-direction:column;gap:16px;max-width:480px">
+        <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Hard Window Treatments</p>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;line-height:1.2;text-wrap:balance">Shutters and blinds with real presence</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#6B6357;text-wrap:pretty">Plantation shutters in hardwood or polymer, and custom blinds in wood, composite, or aluminum. These are the treatments you touch every day, so they should feel substantial in the hand and sit perfectly square in the frame.</p>
+        <a href="Hard Window Treatments.dc.html" style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:3px;width:fit-content">Learn More</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;direction:rtl">
+      <div style="height:420px;direction:ltr">
+        <image-slot id="prod-soft" shape="rect" placeholder="Layered drapery and Roman shades, warm light" src="https://normanusa.com/app/uploads/2022/05/Right-Image-1440-x-1200-Roman.jpg.webp" credit="Norman® USA — Centerpiece™ Roman Shades" credit-href="https://normanusa.com/product/centerpiece-roman/"></image-slot>
+      </div>
+      <div style="direction:ltr;display:flex;flex-direction:column;gap:16px;max-width:480px">
+        <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Soft Window Treatments</p>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;line-height:1.2;text-wrap:balance">Fabric is where a room gets its voice</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#6B6357;text-wrap:pretty">Roller, cellular, Roman, woven wood, and sheer shades. And for the rooms that deserve it: layered drapery, valances, and cornices. This is the luxury tier, and it is where we do our favorite work.</p>
+        <a href="Soft Window Treatments.dc.html" style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:3px;width:fit-content">Learn More</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;direction:ltr">
+      <div style="height:420px;direction:ltr">
+        <image-slot id="prod-motor" shape="rect" placeholder="Motorized shades mid-descent, modern great room" src="https://normanusa.com/app/uploads/2023/01/510-x-460_NormanSmartMotorization-HC-3.jpg.webp" credit="Norman® USA — Smart Motorization" credit-href="https://normanusa.com/product/norman-smart-motorization/"></image-slot>
+      </div>
+      <div style="direction:ltr;display:flex;flex-direction:column;gap:16px;max-width:480px">
+        <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Motorization &amp; Smart Home</p>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;line-height:1.2;text-wrap:balance">Shades that know your schedule</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#6B6357;text-wrap:pretty">Lutron, Somfy, and Zigbee-integrated treatments that respond to your voice, your calendar, or the angle of the sun. Morning light without leaving bed. Privacy at dusk without a thought.</p>
+        <a href="Motorization.dc.html" style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:3px;width:fit-content">Learn More</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center;direction:rtl">
+      <div style="height:420px;direction:ltr">
+        <image-slot id="prod-consult" shape="rect" placeholder="Willa holding fabric swatches to a client window" src="https://normanusa.com/app/uploads/2022/05/InnovationSection-510-x-460_Fabrics.jpg.webp" credit="Norman® USA — Fabric Collection" credit-href="https://normanusa.com/window-treatments/shades/"></image-slot>
+      </div>
+      <div style="direction:ltr;display:flex;flex-direction:column;gap:16px;max-width:480px">
+        <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Design Consultation</p>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;line-height:1.2;text-wrap:balance">Swatches mean nothing until they meet your light</h3>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#6B6357;text-wrap:pretty">An in-home session covering color, fabric, and light planning, with real samples viewed in your actual rooms at the times of day you live in them. This is where the right answer becomes obvious.</p>
+        <a href="#consultation" style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid var(--accent);padding-bottom:3px;width:fit-content">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Who We Serve" style="background:#2A261F;color:#FAF7F1;padding:104px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+    <div style="max-width:640px">
+      <p style="margin:0 0 14px;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Who We Serve</p>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:500;line-height:1.15;color:#FAF7F1;text-wrap:balance">We know this region, house by house.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:rgba(250,247,241,0.15)">
+      <div style="background:#2A261F;padding:40px 36px;display:flex;flex-direction:column;gap:14px">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FAF7F1">Historic Home Owners</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(250,247,241,0.72);text-wrap:pretty">Fredericksburg&rsquo;s historic district. Old Town Alexandria. We handle Certificate of Appropriateness review as a concierge service and replicate period shutters with historical accuracy, so your windows honor the house.</p>
+      </div>
+      <div style="background:#2A261F;padding:40px 36px;display:flex;flex-direction:column;gap:14px">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FAF7F1">HOA Communities</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(250,247,241,0.72);text-wrap:pretty">Stafford, Fairfax, and Loudoun. Dual-sided shades give you the interior fabric you love while the street sees the neutral backing your covenant requires. Everyone&rsquo;s happy, including the board.</p>
+      </div>
+      <div style="background:#2A261F;padding:40px 36px;display:flex;flex-direction:column;gap:14px">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FAF7F1">Military &amp; Government Families</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(250,247,241,0.72);text-wrap:pretty">Relocating to Quantico, Fort Belvoir, or the DC region? Our Rapid-Install program puts custom treatments in your home within 15 business days, fabricated in the US. Bare windows shouldn&rsquo;t be part of the move.</p>
+      </div>
+      <div style="background:#2A261F;padding:40px 36px;display:flex;flex-direction:column;gap:14px">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#FAF7F1">Interior Designers &amp; Realtors</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(250,247,241,0.72);text-wrap:pretty">Our trade program covers measure and install so your design ships flawless. Realtors: the New Move-In Shading Voucher makes a closing gift your clients actually use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Our Process" style="padding:104px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+    <div style="max-width:640px">
+      <p style="margin:0 0 14px;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Our Process</p>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:500;line-height:1.15;text-wrap:balance">Considered from the first call to the last bracket.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:48px">
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--accent);padding-top:24px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--accent)">Step One</span>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600">Discover</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">A short phone consult. We listen first: your rooms, your light, your budget, your timeline.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--accent);padding-top:24px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--accent)">Step Two</span>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600">Design</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">The showroom comes to you. Real samples, held to your window, in your afternoon light.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--accent);padding-top:24px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--accent)">Step Three</span>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600">Craft</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">Custom fabrication by US workrooms we trust, built to the measurements we took ourselves.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--accent);padding-top:24px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--accent)">Step Four</span>
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600">Install</h3>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6B6357;text-wrap:pretty">Our own installers, not subcontractors. Backed by the Product Guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Meet Willa" style="border-top:1px solid rgba(42,38,31,0.12);padding:104px 48px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:72px;align-items:center">
+    <div style="height:520px;max-width:420px;justify-self:center;width:100%">
+      <image-slot id="willa-portrait" shape="rect" placeholder="Portrait of Willa — natural light, in a client's home" src="https://images.unsplash.com/photo-1473252812967-d565c3607e28?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by eduard on Unsplash" credit-href="https://unsplash.com/@eduardmilitaru"></image-slot>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Meet Willa</p>
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,42px);font-weight:500;line-height:1.2;text-wrap:balance">&ldquo;I kept watching good rooms get let down at the window.&rdquo;</h2>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:#6B6357;text-wrap:pretty">Willa Parsons spent years as an interior designer before she narrowed her focus to windows. She saw the same story over and over: clients who cared about their homes, handed off to franchises and big-box counters that sold from a catalog and measured in a hurry.</p>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:#6B6357;text-wrap:pretty">So she built the company she wished her clients had. A designer at your door. Samples in your light. Measurements she stands behind. Your home is the point; she&rsquo;s just here to get the light right.</p>
+      <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:#2A261F">— Willa Parsons, Founder</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Testimonials" style="background:#F2EDE3;padding:104px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);text-align:center">In Their Words</p>
+    <!-- TODO Willa: replace placeholder quotes with real client quotes and neighborhoods -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:18px;background:#FAF7F1;padding:40px 36px">
+          <blockquote style="margin:0;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5;font-style:italic;text-wrap:pretty">&ldquo;{{ t.quote }}&rdquo;</blockquote>
+          <figcaption style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#6B6357">{{ t.attribution }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Service Area" style="padding:104px 48px;border-bottom:1px solid rgba(42,38,31,0.12)">
+  <div style="max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:28px;align-items:center">
+    <p style="margin:0;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent)">Service Area</p>
+    <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,44px);font-weight:500;line-height:1.2;text-wrap:balance">Based in Fredericksburg. At home within 100 miles.</h2>
+    <p style="margin:0;max-width:680px;font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.7;color:#6B6357;text-wrap:pretty">Fredericksburg &nbsp;·&nbsp; Spotsylvania &nbsp;·&nbsp; Stafford &nbsp;·&nbsp; Fairfax &nbsp;·&nbsp; Loudoun &nbsp;·&nbsp; Prince William &nbsp;·&nbsp; Alexandria &nbsp;·&nbsp; Arlington &nbsp;·&nbsp; Richmond metro &nbsp;·&nbsp; select DC-adjacent Maryland</p>
+    <p style="margin:0;font-size:14px;color:#6B6357">Not sure if you&rsquo;re in range? Ask. We&rsquo;ve been known to drive a little farther for a good window.</p>
+  </div>
+</section>
+
+<section id="consultation" data-screen-label="Final CTA" style="background:#2A261F;color:#FAF7F1;padding:112px 48px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:72px">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:500;line-height:1.15;color:#FAF7F1;text-wrap:balance">Your home deserves more than off-the-shelf.</h2>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(250,247,241,0.75);max-width:440px;text-wrap:pretty">Tell us a little about your project. Willa or a member of her team will call within one business day to set up your in-home visit.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <a href="{{ phoneHref }}" style="color:#FAF7F1;font-family:'Cormorant Garamond',serif;font-size:24px" style-hover="color:var(--accent)">{{ phoneLabel }}</a>
+        <a href="{{ mailtoHref }}" style="color:rgba(250,247,241,0.75);font-size:14px;letter-spacing:0.06em" style-hover="color:var(--accent)">{{ emailLabel }}</a>
+      </div>
+    </div>
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submitForm }}" aria-label="Booking form" style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <input required name="name" placeholder="Name" aria-label="Name" style="background:transparent;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px" style-focus="outline:2px solid var(--accent);outline-offset:2px">
+          <input required type="email" name="email" placeholder="Email" aria-label="Email" style="background:transparent;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px" style-focus="outline:2px solid var(--accent);outline-offset:2px">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" style="background:transparent;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px" style-focus="outline:2px solid var(--accent);outline-offset:2px">
+          <input name="zip" placeholder="ZIP" aria-label="ZIP code" style="background:transparent;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px" style-focus="outline:2px solid var(--accent);outline-offset:2px">
+        </div>
+        <select name="project" aria-label="Project type" style="background:#2A261F;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px" style-focus="outline:2px solid var(--accent);outline-offset:2px">
+          <option value="">Project type…</option>
+          <option>Plantation Shutters</option>
+          <option>Blinds &amp; Shades</option>
+          <option>Drapery &amp; Soft Treatments</option>
+          <option>Motorization &amp; Smart Home</option>
+          <option>Not Sure Yet — Let&rsquo;s Talk</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Tell us about your windows…" aria-label="Message" style="background:transparent;border:1px solid rgba(250,247,241,0.35);color:#FAF7F1;padding:14px 16px;font-size:14px;resize:vertical" style-focus="outline:2px solid var(--accent);outline-offset:2px"></textarea>
+        <!-- TODO Willa: wire this form to your backend of choice (Formspree, Resend, HubSpot) -->
+        <button type="submit" style="background:var(--accent);color:#FAF7F1;border:none;padding:16px;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer" style-hover="background:#FAF7F1;color:#2A261F" style-focus="outline:2px solid #FAF7F1;outline-offset:2px">Book Your In-Home Consultation</button>
+      </form>
+    </sc-if>
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;border:1px solid rgba(250,247,241,0.25);padding:48px">
+        <h3 style="margin:0;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:#FAF7F1">Thank you.</h3>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(250,247,241,0.75)">We&rsquo;ve got your note. Expect a call from Willa&rsquo;s team within one business day to find a time that works.</p>
+      </div>
+    </sc-if>
+  </div>
+</section>
+</main>
+
+<footer data-screen-label="Footer" style="background:#221F19;color:rgba(250,247,241,0.65);padding:64px 48px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-wrap:wrap;gap:48px;justify-content:space-between;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:320px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#FAF7F1">U Design For The Home</span>
+        <p style="margin:0;font-size:13px;line-height:1.6">Design-led window treatments, brought to your door. Fredericksburg, VA and 100 miles around.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+        <span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,247,241,0.45)">Contact</span>
+        <a href="{{ phoneHref }}" style="color:rgba(250,247,241,0.75)" style-hover="color:#FAF7F1">{{ phoneLabel }}</a>
+        <a href="{{ mailtoHref }}" style="color:rgba(250,247,241,0.75)" style-hover="color:#FAF7F1">{{ emailLabel }}</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+        <span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,247,241,0.45)">Follow</span>
+        <a href="#" style="color:rgba(250,247,241,0.75)" style-hover="color:#FAF7F1">Instagram</a>
+        <a href="#" style="color:rgba(250,247,241,0.75)" style-hover="color:#FAF7F1">Pinterest</a>
+        <a href="#" style="color:rgba(250,247,241,0.75)" style-hover="color:#FAF7F1">Houzz</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center;border-top:1px solid rgba(250,247,241,0.12);padding-top:24px">
+      <p style="margin:0;font-size:12px;letter-spacing:0.08em;color:rgba(250,247,241,0.4)">U Design For The Home · Serving Fredericksburg &amp; the Mid-Atlantic · Registered Dealer &amp; Insured</p>
+      <div style="display:flex;gap:24px;font-size:12px">
+        <a href="Terms of Service.dc.html" style="color:rgba(250,247,241,0.55)" style-hover="color:#FAF7F1">Terms of Service</a>
+        <a href="Privacy Policy.dc.html" style="color:rgba(250,247,241,0.55)" style-hover="color:#FAF7F1">Privacy Policy</a>
+        <a href="Admin Dashboard.dc.html" style="color:rgba(250,247,241,0.35)" style-hover="color:#FAF7F1">Admin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#7D8471&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#7D8471&quot;, &quot;#B26E4B&quot;, &quot;#A8894C&quot;], &quot;section&quot;: &quot;Style&quot; },
+  &quot;headline&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;way-you-live&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;way-you-live&quot;, &quot;begin-with-light&quot;, &quot;showroom-comes-to-you&quot;], &quot;section&quot;: &quot;Copy&quot; }
+}">
+class Component extends DCLogic {
+  state = { sent: false, site: {} };
+  loadSite() {
+    try { this.setState({ site: JSON.parse(localStorage.getItem('udfh-site') || '{}') }); }
+    catch (err) { this.setState({ site: {} }); }
+  }
+  applyAccent() {
+    document.documentElement.style.setProperty('--accent', this.props.accent ?? '#7D8471');
+  }
+  componentDidMount() {
+    this.applyAccent();
+    this.loadSite();
+    this._onStorage = () => this.loadSite();
+    window.addEventListener('storage', this._onStorage);
+    window.addEventListener('focus', this._onStorage);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this._onStorage);
+    window.removeEventListener('focus', this._onStorage);
+  }
+  componentDidUpdate() { this.applyAccent(); }
+  renderVals() {
+    const s = this.state.site;
+    const heads = {
+      'way-you-live': 'Custom Window Treatments, Designed for the Way You Actually Live.',
+      'begin-with-light': 'Every Room Begins with Light. Let\u2019s Get Yours Right.',
+      'showroom-comes-to-you': 'The Showroom Comes to You. The Design Comes from a Designer.'
+    };
+    const phone = s.phone || '(540) 429-5241';
+    const email = s.email || 'udesignforthehome@gmail.com';
+    const defaultTestimonials = [
+      { quote: 'She held four fabrics up to our bay window at five in the evening and said, \u2018this one.\u2019 She was right.', attribution: 'Margaret \u00b7 Old Town Alexandria' },
+      { quote: 'We closed on a Friday and had shades in every room before the movers left. With three kids, that mattered.', attribution: 'David \u00b7 Stafford' },
+      { quote: 'The COA paperwork alone would have taken me months. Willa handled all of it and the shutters look original to the house.', attribution: 'Eleanor \u00b7 Fredericksburg Historic District' }
+    ];
+    const cms = (s.testimonials || []).filter(t => t && t.quote);
+    return {
+      heroHeadline: s.heroHeadline || heads[this.props.headline ?? 'way-you-live'] || heads['way-you-live'],
+      heroSubhead: s.heroSubhead || 'An interior designer\u2019s eye, a mobile showroom that comes to your door, and a Product Guarantee on every custom install.',
+      phoneLabel: phone,
+      phoneHref: 'tel:+1' + phone.replace(/\D/g, ''),
+      emailLabel: email,
+      mailtoHref: 'mailto:' + email,
+      testimonials: cms.length ? cms : defaultTestimonials,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submitForm: (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const lead = {
+          id: Date.now(), date: new Date().toISOString(),
+          name: fd.get('name') || '', email: fd.get('email') || '', phone: fd.get('phone') || '',
+          zip: fd.get('zip') || '', project: fd.get('project') || '', message: fd.get('message') || ''
+        };
+        try {
+          const leads = JSON.parse(localStorage.getItem('udfh-leads') || '[]');
+          leads.unshift(lead);
+          localStorage.setItem('udfh-leads', JSON.stringify(leads));
+        } catch (err) { /* storage unavailable */ }
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
