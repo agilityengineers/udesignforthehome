@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "U Design For The Home"
+version = "1.0.0"
+id = "artifacts/udfh-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21118
+
+[services.development]
+run = "pnpm --filter @workspace/udfh-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/udfh-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/udfh-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21118"
+BASE_PATH = "/"

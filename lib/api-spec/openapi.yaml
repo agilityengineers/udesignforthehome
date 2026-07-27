@@ -3,20 +3,23 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: U Design For The Home — API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: public
+    description: Public endpoints
+  - name: admin
+    description: Admin-only endpoints
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +27,227 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /settings:
+    get:
+      operationId: getPublicSettings
+      tags: [public]
+      summary: Get resolved site settings (public)
+      responses:
+        "200":
+          description: Resolved settings
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResolvedSettings"
+
+  /leads:
+    post:
+      operationId: submitLead
+      tags: [public]
+      summary: Submit a consultation request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeadInput"
+      responses:
+        "201":
+          description: Lead created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/login:
+    post:
+      operationId: adminLogin
+      tags: [admin]
+      summary: Admin login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginInput"
+      responses:
+        "200":
+          description: Logged in
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+        "401":
+          description: Wrong password
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/logout:
+    post:
+      operationId: adminLogout
+      tags: [admin]
+      summary: Admin logout
+      responses:
+        "200":
+          description: Logged out
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+
+  /admin/leads:
+    get:
+      operationId: listAdminLeads
+      tags: [admin]
+      summary: List all leads + aggregate stats
+      responses:
+        "200":
+          description: Leads and stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadsResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/leads/{id}:
+    patch:
+      operationId: updateAdminLead
+      tags: [admin]
+      summary: Update a lead's status and/or notes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeadUpdate"
+      responses:
+        "200":
+          description: Updated lead
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadUpdateResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    delete:
+      operationId: deleteAdminLead
+      tags: [admin]
+      summary: Delete a lead
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /admin/settings:
+    get:
+      operationId: getAdminSettings
+      tags: [admin]
+      summary: Get raw site settings (admin)
+      responses:
+        "200":
+          description: Raw settings
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RawSettings"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    put:
+      operationId: updateAdminSettings
+      tags: [admin]
+      summary: Update site settings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SettingsInput"
+      responses:
+        "200":
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    delete:
+      operationId: resetAdminSettings
+      tags: [admin]
+      summary: Reset settings to defaults
+      responses:
+        "200":
+          description: Reset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OkResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
 components:
   schemas:
     HealthStatus:
@@ -31,6 +255,188 @@ components:
       properties:
         status:
           type: string
-      required:
-        - status
+      required: [status]
 
+    OkResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+      required: [ok]
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required: [error]
+
+    Testimonial:
+      type: object
+      properties:
+        quote:
+          type: string
+        attribution:
+          type: string
+      required: [quote, attribution]
+
+    ResolvedSettings:
+      type: object
+      properties:
+        phone:
+          type: string
+        email:
+          type: string
+        phoneHref:
+          type: string
+        mailtoHref:
+          type: string
+        heroHeadline:
+          type: string
+        heroSubhead:
+          type: string
+        heroStyle:
+          type: string
+        heroVideoUrl:
+          type: string
+        testimonials:
+          type: array
+          items:
+            $ref: "#/components/schemas/Testimonial"
+      required: [phone, email, phoneHref, mailtoHref, heroHeadline, heroSubhead, heroStyle, heroVideoUrl, testimonials]
+
+    RawSettings:
+      type: object
+      properties:
+        phone:
+          type: string
+        email:
+          type: string
+        heroHeadline:
+          type: string
+        heroSubhead:
+          type: string
+        heroStyle:
+          type: string
+        heroVideoUrl:
+          type: string
+        testimonials:
+          type: array
+          items:
+            $ref: "#/components/schemas/Testimonial"
+      required: [phone, email, heroHeadline, heroSubhead, heroStyle, heroVideoUrl, testimonials]
+
+    LeadInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          minLength: 1
+        phone:
+          type: string
+        zip:
+          type: string
+        projectType:
+          type: string
+        message:
+          type: string
+      required: [name, email]
+
+    LeadUpdate:
+      type: object
+      properties:
+        status:
+          type: string
+        notes:
+          type: string
+
+    LeadRecord:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        zip:
+          type: string
+        projectType:
+          type: string
+        message:
+          type: string
+        status:
+          type: string
+        notes:
+          type: string
+        createdAt:
+          type: string
+        dateLabel:
+          type: string
+      required: [id, name, email, phone, zip, projectType, message, status, notes, createdAt, dateLabel]
+
+    LeadStats:
+      type: object
+      properties:
+        total:
+          type: integer
+        newCount:
+          type: integer
+        thisWeek:
+          type: integer
+        topProject:
+          type: string
+      required: [total, newCount, thisWeek, topProject]
+
+    LeadsResponse:
+      type: object
+      properties:
+        leads:
+          type: array
+          items:
+            $ref: "#/components/schemas/LeadRecord"
+        stats:
+          $ref: "#/components/schemas/LeadStats"
+      required: [leads, stats]
+
+    LeadUpdateResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        lead:
+          $ref: "#/components/schemas/LeadRecord"
+      required: [ok, lead]
+
+    LoginInput:
+      type: object
+      properties:
+        password:
+          type: string
+      required: [password]
+
+    SettingsInput:
+      type: object
+      properties:
+        phone:
+          type: string
+        email:
+          type: string
+        heroHeadline:
+          type: string
+        heroSubhead:
+          type: string
+        heroStyle:
+          type: string
+        heroVideoUrl:
+          type: string
+        testimonials:
+          type: array
+          items:
+            $ref: "#/components/schemas/Testimonial"
+      required: [phone, email, heroHeadline, heroSubhead, heroStyle, heroVideoUrl, testimonials]

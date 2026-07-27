@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+/* -------------------------------------------------------------------------
+   App theme — U Design For The Home
+   Flat, editorial aesthetic: NO border radius, NO shadows anywhere.
+   -------------------------------------------------------------------------- */
+
+@theme {
+  /* Brand colors */
+  --color-cream: #FAF7F1;
+  --color-sand: #F2EDE3;
+  --color-ink: #2A261F;
+  --color-footer-ink: #221F19;
+  --color-sage: #7D8471;
+  --color-terracotta: #B26E4B;
+  --color-brass: #A8894C;
+  --color-muted: #6B6357;
+  --color-body-ink: #4A443B;
+  --color-muted-gray: #9A9182;
+  --color-danger: #A0522D;
+  /* Dynamic accent — client-tweakable (sage default) */
+  --color-accent: var(--accent);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, sans-serif;
+
+  /* Flat aesthetic — zero radius everywhere */
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+
+  /* Flat aesthetic — no shadows */
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-inner: none;
+
+  /* Custom max-widths */
+  --width-content: 1200px;
+  --width-content-narrow: 1100px;
+  --width-prose: 760px;
+
+  /* Custom letter-spacing */
+  --tracking-eyebrow: 0.28em;
+  --tracking-wide: 0.14em;
+  --tracking-widest: 0.3em;
+
+  /* Scroll-cue animation */
+  --animate-scrollCue: scrollCue 2.4s ease-in-out infinite;
+
+  @keyframes scrollCue {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(8px); opacity: 0.4; }
+  }
+}
+
+@layer base {
+  :root {
+    /* Re-themeable accent: default sage. Admin can swap to terracotta or brass. */
+    --accent: #7d8471;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #faf7f1;
+    color: #2a261f;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Shared uppercase "eyebrow" label used across sections */
+  .eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-accent);
+  }
+
+  /* Custom max-width utilities */
+  .max-w-content { max-width: var(--width-content); }
+  .max-w-content-narrow { max-width: var(--width-content-narrow); }
+  .max-w-prose { max-width: var(--width-prose); }
+
+  /* Custom tracking utilities */
+  .tracking-eyebrow { letter-spacing: var(--tracking-eyebrow); }
+}
