@@ -36,7 +36,7 @@ export function BookingForm() {
 
   if (status === "sent") {
     return (
-      <div className="flex flex-col justify-center gap-4 border border-[color-mix(in_srgb,var(--color-cream)_25%,transparent)] p-12">
+      <div className="flex flex-col justify-center gap-4 border border-[color-mix(in_srgb,var(--color-cream)_25%,transparent)] p-8 sm:p-12">
         <h3 className="m-0 font-serif text-[30px] font-medium text-[var(--color-cream)]">
           Thank you.
         </h3>
@@ -50,7 +50,7 @@ export function BookingForm() {
 
   return (
     <form onSubmit={onSubmit} aria-label="Booking form" className="flex flex-col gap-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input required name="name" placeholder="Name" aria-label="Name" variant="onDark" />
         <Input required type="email" name="email" placeholder="Email" aria-label="Email" variant="onDark" />
       </div>
@@ -62,7 +62,7 @@ export function BookingForm() {
         name="project"
         aria-label="Project type"
         defaultValue=""
-        className="border border-[color-mix(in_srgb,var(--color-cream)_35%,transparent)] bg-[var(--color-ink)] px-4 py-[14px] text-sm text-[var(--color-cream)] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+        className="border border-[color-mix(in_srgb,var(--color-cream)_35%,transparent)] bg-[var(--color-ink)] px-4 py-[14px] text-base text-[var(--color-cream)] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] sm:text-sm"
       >
         <option value="">Project type…</option>
         {PROJECT_TYPES.map((p) => (

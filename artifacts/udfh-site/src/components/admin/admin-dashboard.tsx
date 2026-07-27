@@ -69,7 +69,7 @@ export function AdminDashboard({
 
   return (
     <div className="min-h-screen bg-[var(--color-sand)]">
-      <header className="flex flex-wrap items-center justify-between gap-4 bg-[var(--color-ink)] px-6 py-5 text-[var(--color-cream)] sm:px-12">
+      <header className="flex flex-wrap items-center justify-between gap-3 bg-[var(--color-ink)] px-4 py-5 text-[var(--color-cream)] sm:gap-4 sm:px-12">
         <div className="flex flex-col gap-0.5">
           <span className="font-serif text-xl font-semibold text-[var(--color-cream)]">
             {BUSINESS.name}
@@ -78,7 +78,7 @@ export function AdminDashboard({
             Admin Dashboard
           </span>
         </div>
-        <nav className="flex items-center gap-2" aria-label="Admin sections">
+        <nav className="flex flex-wrap items-center gap-x-2 gap-y-1" aria-label="Admin sections">
           <TabButton active={onLeads} onClick={() => setTab("leads")}>Leads</TabButton>
           <TabButton active={!onLeads} onClick={() => setTab("content")}>Site Content</TabButton>
           <Link

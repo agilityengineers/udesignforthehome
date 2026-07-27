@@ -11,7 +11,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <textarea
         ref={ref}
         className={cn(
-          "w-full resize-y border bg-transparent px-4 py-[14px] text-sm leading-[1.5] outline-none transition-colors placeholder:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]",
+          "w-full resize-y border bg-transparent px-4 py-[14px] text-base leading-[1.5] outline-none transition-colors placeholder:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] sm:text-sm",
           variant === "onDark"
             ? "border-[color-mix(in_srgb,var(--color-cream)_35%,transparent)] text-[var(--color-cream)] placeholder:text-[color-mix(in_srgb,var(--color-cream)_55%,transparent)]"
             : "border-[color-mix(in_srgb,var(--color-ink)_25%,transparent)] text-[var(--color-ink)] placeholder:text-[var(--color-muted)]",

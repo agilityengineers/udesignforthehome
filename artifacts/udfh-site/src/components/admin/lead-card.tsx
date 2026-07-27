@@ -30,7 +30,7 @@ export function LeadCard({
 
   return (
     <div
-      className="flex flex-col gap-4 bg-[var(--color-cream)] px-8 py-7"
+      className="flex flex-col gap-4 bg-[var(--color-cream)] px-6 py-6 sm:px-8 sm:py-7"
       style={{ borderLeft: `3px solid ${color}` }}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">

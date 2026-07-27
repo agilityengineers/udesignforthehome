@@ -6,9 +6,9 @@ export function FinalCta({ settings }: { settings: ResolvedSettings }) {
     <section
       id="consultation"
       aria-label="Book a consultation"
-      className="bg-[var(--color-ink)] px-6 py-28 text-[var(--color-cream)] sm:px-12"
+      className="bg-[var(--color-ink)] px-6 py-16 text-[var(--color-cream)] sm:px-12 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto grid max-w-content-narrow grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-[72px]">
+      <div className="mx-auto grid max-w-content-narrow grid-cols-1 gap-10 sm:gap-14 lg:grid-cols-2 lg:gap-[72px]">
         <div className="flex flex-col gap-6">
           <h2 className="m-0 font-serif text-[clamp(34px,4vw,52px)] font-medium leading-[1.15] text-[var(--color-cream)]">
             Your home deserves more than off-the-shelf.
