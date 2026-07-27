@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Re-themeable accent. Client-tweakable: sage / terracotta / brass.
+       The admin can be extended to change this; default is sage. */
+    --accent: #7d8471;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #faf7f1;
+    color: #2a261f;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Editorial typography helpers from the design tokens. */
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Accessibility: honor reduced-motion. Disables the scroll cue, smooth
+     scroll, and any transitions/animations site-wide. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Shared uppercase "eyebrow" label used across sections. */
+  .eyebrow {
+    @apply text-xs uppercase tracking-eyebrow text-accent;
+  }
+}
