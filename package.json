@@ -1,54 +1,19 @@
 {
-  "name": "udesignforthehome",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Marketing site + admin CRM/CMS for U Design For The Home — designer-led window treatments, Fredericksburg VA.",
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio",
-    "images:placeholders": "node scripts/generate-placeholders.mjs",
-    "images:fetch": "node scripts/fetch-norman-images.mjs",
-    "cf:build": "npx opennextjs-cloudflare build",
-    "cf:preview": "npx opennextjs-cloudflare build && npx wrangler dev",
-    "cf:deploy": "npx opennextjs-cloudflare build && npx wrangler deploy",
-    "cf:d1:migrate:local": "npx wrangler d1 migrations apply udfh-db --local",
-    "cf:d1:migrate:remote": "npx wrangler d1 migrations apply udfh-db --remote"
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
+  "private": true,
   "dependencies": {
-    "@prisma/client": "^6.3.1",
-    "@radix-ui/react-slot": "^1.3.3",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.474.0",
-    "next": "^15.5.22",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^2.6.0"
+    "@replit/connectors-sdk": "^0.4.1"
   },
   "devDependencies": {
-    "@types/node": "^20.17.16",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.19.0",
-    "eslint-config-next": "^15.5.22",
-    "postcss": "^8.5.1",
-    "prisma": "^6.3.1",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-animate": "^1.0.7",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "prettier": "^3.9.5",
+    "typescript": "~5.9.3"
   }
 }
