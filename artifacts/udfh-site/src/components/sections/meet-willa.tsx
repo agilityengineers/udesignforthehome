@@ -2,12 +2,12 @@ import { CoverImage } from "@/components/cover-image";
 
 export function MeetWilla() {
   return (
-    <section aria-label="Meet Willa" className="border-t border-[color-mix(in_srgb,var(--color-ink)_10%,transparent)] px-6 py-[104px] sm:px-12">
-      <div className="mx-auto grid max-w-content-narrow grid-cols-[repeat(auto-fit,minmax(300px,1fr))] items-center gap-[72px]">
+    <section aria-label="Meet Willa" className="border-t border-[color-mix(in_srgb,var(--color-ink)_10%,transparent)] px-6 py-16 sm:px-12 sm:py-24 lg:py-[104px]">
+      <div className="mx-auto grid max-w-content-narrow grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-[72px]">
         <CoverImage
           src="/images/norman/willa-portrait.jpg"
           alt="Portrait of Willa Parsons in natural light in a client's home"
-          wrapperClassName="h-[520px] w-full max-w-[420px] justify-self-center"
+          wrapperClassName="h-[360px] w-full max-w-[420px] justify-self-center sm:h-[460px] lg:h-[520px]"
         />
         <div className="flex max-w-[520px] flex-col gap-5">
           <p className="eyebrow">Meet Willa</p>

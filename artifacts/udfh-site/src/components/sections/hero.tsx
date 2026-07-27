@@ -27,19 +27,19 @@ export function Hero({
 function HeroButtons({ align = "center" }: { align?: "center" | "start" }) {
   return (
     <div
-      className={`pointer-events-auto mt-2 flex flex-wrap gap-4 ${
-        align === "center" ? "justify-center" : "justify-start"
+      className={`pointer-events-auto mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4 ${
+        align === "center" ? "sm:justify-center" : "sm:justify-start"
       }`}
     >
       <a
         href="#consultation"
-        className="bg-[var(--color-accent)] px-8 py-[15px] text-[13px] font-semibold uppercase tracking-wide text-[var(--color-cream)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)]"
+        className="w-full bg-[var(--color-accent)] px-8 py-[15px] text-center text-[13px] font-semibold uppercase tracking-wide text-[var(--color-cream)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)] sm:w-auto"
       >
         Book Your In-Home Consultation
       </a>
       <a
         href="#work"
-        className="border border-[color-mix(in_srgb,var(--color-cream)_60%,transparent)] px-8 py-[15px] text-[13px] uppercase tracking-wide text-[var(--color-cream)] transition-colors hover:bg-[color-mix(in_srgb,var(--color-cream)_10%,transparent)]"
+        className="w-full border border-[color-mix(in_srgb,var(--color-cream)_60%,transparent)] px-8 py-[15px] text-center text-[13px] uppercase tracking-wide text-[var(--color-cream)] transition-colors hover:bg-[color-mix(in_srgb,var(--color-cream)_10%,transparent)] sm:w-auto"
       >
         See Our Product
       </a>
@@ -49,7 +49,7 @@ function HeroButtons({ align = "center" }: { align?: "center" | "start" }) {
 
 function ImageHero({ headline, subhead }: { headline: string; subhead: string }) {
   return (
-    <section aria-label="Hero" className="relative h-screen min-h-[640px] bg-[var(--color-ink)]">
+    <section aria-label="Hero" className="relative flex min-h-[100svh] flex-col justify-end bg-[var(--color-ink)]">
       <CoverImage
         src="/images/norman/hero.jpg"
         alt="Norman PerfectSheer sheer shades filtering golden-hour light in a living room"
@@ -63,21 +63,21 @@ function ImageHero({ headline, subhead }: { headline: string; subhead: string })
           background: "linear-gradient(to top, rgba(26,23,18,0.82) 0%, rgba(26,23,18,0.35) 45%, rgba(26,23,18,0.25) 100%)",
         }}
       />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center px-6 pb-24 sm:px-12">
-        <div className="flex max-w-[880px] flex-col items-center gap-6 text-center">
-          <p className="m-0 text-xs uppercase tracking-[0.3em] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)]">
+      <div className="pointer-events-none relative flex justify-center px-6 pb-20 pt-28 sm:px-12 sm:pb-24 sm:pt-32">
+        <div className="flex max-w-[880px] flex-col items-center gap-5 text-center sm:gap-6">
+          <p className="m-0 text-[10px] uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)] sm:text-xs sm:tracking-[0.3em]">
             {EYEBROW}
           </p>
-          <h1 className="m-0 font-serif text-[clamp(38px,5.4vw,72px)] font-medium leading-[1.08] text-[var(--color-cream)]">
+          <h1 className="m-0 font-serif text-[clamp(30px,6vw,72px)] font-medium leading-[1.08] text-[var(--color-cream)]">
             {headline}
           </h1>
-          <p className="m-0 max-w-[560px] text-[17px] leading-[1.6] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)]">
+          <p className="m-0 max-w-[560px] text-[15px] leading-[1.6] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)] sm:text-[17px]">
             {subhead}
           </p>
           <HeroButtons align="center" />
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-7 left-1/2 -translate-x-1/2">
+      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-7">
         <svg
           width="18"
           height="28"
@@ -121,16 +121,16 @@ function VideoHero({
         className="absolute inset-0"
         style={{ background: "linear-gradient(rgba(26,23,18,0.74) 0%, rgba(26,23,18,0.80) 100%)" }}
       />
-      <div className="relative mx-auto max-w-content px-6 pb-20 pt-40 sm:px-12 lg:pb-28 lg:pt-44">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col gap-6">
-            <p className="m-0 text-xs uppercase tracking-[0.3em] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)]">
+      <div className="relative mx-auto max-w-content px-6 pb-16 pt-28 sm:px-12 sm:pt-36 lg:pb-28 lg:pt-44">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col gap-5 sm:gap-6">
+            <p className="m-0 text-[10px] uppercase tracking-[0.16em] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)] sm:text-xs sm:tracking-[0.3em]">
               {EYEBROW}
             </p>
-            <h1 className="m-0 font-serif text-[clamp(32px,3.8vw,52px)] font-medium leading-[1.1] text-[var(--color-cream)]">
+            <h1 className="m-0 font-serif text-[clamp(28px,6vw,52px)] font-medium leading-[1.1] text-[var(--color-cream)]">
               {headline}
             </h1>
-            <p className="m-0 max-w-[520px] text-[17px] leading-[1.6] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)]">
+            <p className="m-0 max-w-[520px] text-[15px] leading-[1.6] text-[color-mix(in_srgb,var(--color-cream)_85%,transparent)] sm:text-[17px]">
               {subhead}
             </p>
             <HeroButtons align="start" />

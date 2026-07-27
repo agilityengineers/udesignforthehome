@@ -10,11 +10,11 @@ export function ProductPage({ data }: { data: ProductPageData }) {
       <PageHeader />
       <main>
         {/* Intro split */}
-        <section aria-label="Introduction" className="px-6 pb-[72px] pt-24 sm:px-12">
-          <div className="mx-auto grid max-w-content-narrow grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center gap-16">
+        <section aria-label="Introduction" className="px-6 pb-12 pt-16 sm:px-12 sm:pb-[72px] sm:pt-24">
+          <div className="mx-auto grid max-w-content-narrow grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col gap-5">
               <p className="eyebrow">{data.eyebrow}</p>
-              <h1 className="m-0 font-serif text-[clamp(36px,4.5vw,56px)] font-medium leading-[1.1]">
+              <h1 className="m-0 font-serif text-[clamp(32px,4.5vw,56px)] font-medium leading-[1.1]">
                 {data.h1}
               </h1>
               <p className="m-0 text-base leading-[1.75] text-[var(--color-muted)]">
@@ -24,15 +24,15 @@ export function ProductPage({ data }: { data: ProductPageData }) {
             <CoverImage
               src={data.heroImage}
               alt={data.heroAlt}
-              wrapperClassName="h-[420px] w-full"
+              wrapperClassName="h-[280px] w-full sm:h-[420px]"
               priority
             />
           </div>
         </section>
 
         {/* Product grid */}
-        <section aria-label="Collection" className="px-6 pb-24 pt-8 sm:px-12">
-          <div className="mx-auto grid max-w-content-narrow grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-10 gap-y-12">
+        <section aria-label="Collection" className="px-6 pb-16 pt-4 sm:px-12 sm:pb-24 sm:pt-8">
+          <div className="mx-auto grid max-w-content-narrow grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3">
             {data.items.map((item) => (
               <div key={item.name} className="flex flex-col gap-3.5">
                 <CoverImage
@@ -48,7 +48,7 @@ export function ProductPage({ data }: { data: ProductPageData }) {
         </section>
 
         {/* CTA */}
-        <section aria-label="Book a consultation" className="bg-[var(--color-ink)] px-6 py-24 text-center text-[var(--color-cream)] sm:px-12">
+        <section aria-label="Book a consultation" className="bg-[var(--color-ink)] px-6 py-16 text-center text-[var(--color-cream)] sm:px-12 sm:py-24">
           <div className="mx-auto flex max-w-[680px] flex-col items-center gap-6">
             <h2 className="m-0 font-serif text-[clamp(30px,4vw,46px)] font-medium leading-[1.15]">
               {data.ctaH2}

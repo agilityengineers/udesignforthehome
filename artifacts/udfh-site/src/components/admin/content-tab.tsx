@@ -79,7 +79,7 @@ export function ContentTab({ initial, onSaved }: { initial: RawSettings; onSaved
       </div>
 
       <Card title="Contact Information" hint="Shown in the booking section and footer on the home page.">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-1.5">
             <Label>Phone</Label>
             <Input
@@ -174,7 +174,7 @@ export function ContentTab({ initial, onSaved }: { initial: RawSettings; onSaved
         ))}
       </Card>
 
-      <div className="flex items-center gap-3.5">
+      <div className="flex flex-wrap items-center gap-3.5">
         <button
           type="submit"
           disabled={saving}
@@ -201,7 +201,7 @@ export function ContentTab({ initial, onSaved }: { initial: RawSettings; onSaved
 
 function Card({ title, hint, children }: { title: string; hint: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-[18px] bg-[var(--color-cream)] p-8">
+    <div className="flex flex-col gap-[18px] bg-[var(--color-cream)] p-6 sm:p-8">
       <h3 className="m-0 font-serif text-xl font-semibold">{title}</h3>
       <p className="m-0 text-[13px] text-[var(--color-muted)]">{hint}</p>
       {children}

@@ -28,13 +28,13 @@ export function LoginForm() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[var(--color-ink)] p-8">
+    <div className="flex min-h-[100svh] items-center justify-center bg-[var(--color-ink)] p-4 sm:p-8">
       <form
         onSubmit={onSubmit}
-        className="flex w-full max-w-[400px] flex-col gap-5 bg-[var(--color-cream)] px-12 py-14"
+        className="flex w-full max-w-[400px] flex-col gap-5 bg-[var(--color-cream)] px-6 py-10 sm:px-12 sm:py-14"
       >
         <div className="flex flex-col gap-1 text-center">
-          <span className="font-serif text-[26px] font-semibold">{BUSINESS.name}</span>
+          <span className="font-serif text-[22px] font-semibold sm:text-[26px]">{BUSINESS.name}</span>
           <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-muted)]">
             Admin Sign-In
           </span>

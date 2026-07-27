@@ -31,7 +31,7 @@ export function LegalPage({
   return (
     <>
       <PageHeader />
-      <main className="mx-auto flex max-w-prose flex-col gap-9 px-8 pb-28 pt-20">
+      <main className="mx-auto flex max-w-prose flex-col gap-8 px-6 pb-20 pt-14 sm:gap-9 sm:px-8 sm:pb-28 sm:pt-20">
         <div className="flex flex-col gap-3">
           <p className="eyebrow">Legal</p>
           <h1 className="m-0 font-serif text-[clamp(36px,5vw,52px)] font-medium leading-[1.1]">
