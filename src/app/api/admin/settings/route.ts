@@ -34,6 +34,8 @@ export async function PUT(req: Request) {
     email: String(body.email ?? ""),
     heroHeadline: String(body.heroHeadline ?? ""),
     heroSubhead: String(body.heroSubhead ?? ""),
+    heroStyle: body.heroStyle === "video" ? "video" : "image",
+    heroVideoUrl: String(body.heroVideoUrl ?? ""),
     testimonials,
   });
 

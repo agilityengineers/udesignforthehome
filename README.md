@@ -43,6 +43,13 @@ Change `ADMIN_PASSWORD` and `AUTH_SECRET` before going live.
   [`src/components/sections/`](./src/components/sections): header, hero, The Willa
   Difference, Products & Services (alternating rows), Who We Serve, Our Process,
   Meet Willa, Testimonials, Service Area, booking CTA, footer.
+- **Hero style is admin-selectable** (Admin → Site Content → Hero Style):
+  - _Image_ — the full-screen background hero (default).
+  - _Video_ — a compact two-column layout: copy on the left, a **16:9**
+    YouTube/Vimeo embed on the right, over the dimmed hero photo. Paste any
+    YouTube or Vimeo URL; it autoplays muted + looped with native player
+    controls, disables autoplay under `prefers-reduced-motion`, and falls back
+    to the image hero if the URL is missing/invalid.
 - **Three product pages** — `/hard-window-treatments`, `/soft-window-treatments`,
   `/motorization` (shared layout, single booking CTA, Norman-credit footer).
 - **Legal** — `/terms` and `/privacy` (contact details pulled from the CMS).
@@ -116,7 +123,9 @@ npm run images:fetch     # downloads & self-hosts the real Norman® assets
 These are intentionally left as `TODO` in the code and are the client's to
 resolve before launch:
 
-1. **Hero video** — the hero uses a still image; the brief calls for real footage
+1. **Hero footage (optional)** — the admin can already embed a YouTube/Vimeo
+   video in the hero (Hero Style → Video). The still-open, _optional_ item from
+   the brief is real self-hosted background **footage** for the _image_ hero
    (`<video autoPlay muted loop playsInline poster>`), disabled under reduced
    motion. See `src/components/sections/hero.tsx`.
 2. **Willa portrait** — replace the placeholder at

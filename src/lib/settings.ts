@@ -8,6 +8,8 @@ import {
   type Testimonial,
 } from "@/lib/content";
 
+export type HeroStyle = "image" | "video";
+
 /** The resolved, render-ready site content (defaults already applied). */
 export type ResolvedSettings = {
   phone: string;
@@ -16,6 +18,8 @@ export type ResolvedSettings = {
   mailtoHref: string;
   heroHeadline: string;
   heroSubhead: string;
+  heroStyle: HeroStyle;
+  heroVideoUrl: string;
   testimonials: Testimonial[];
 };
 
@@ -25,6 +29,8 @@ export type RawSettings = {
   email: string;
   heroHeadline: string;
   heroSubhead: string;
+  heroStyle: HeroStyle;
+  heroVideoUrl: string;
   testimonials: Testimonial[];
 };
 
@@ -49,6 +55,10 @@ function parseTestimonials(json: string): Testimonial[] {
   }
 }
 
+function normalizeStyle(value: string | undefined): HeroStyle {
+  return value === "video" ? "video" : "image";
+}
+
 /** Read the raw editable settings row (creating defaults if none exists). */
 export async function getRawSettings(): Promise<RawSettings> {
   const db = await getDb();
@@ -58,6 +68,8 @@ export async function getRawSettings(): Promise<RawSettings> {
     email: row?.email ?? "",
     heroHeadline: row?.heroHeadline ?? "",
     heroSubhead: row?.heroSubhead ?? "",
+    heroStyle: normalizeStyle(row?.heroStyle),
+    heroVideoUrl: row?.heroVideoUrl ?? "",
     testimonials: parseTestimonials(row?.testimonials ?? "[]"),
   };
 }
@@ -78,6 +90,8 @@ export async function getResolvedSettings(): Promise<ResolvedSettings> {
       email: "",
       heroHeadline: "",
       heroSubhead: "",
+      heroStyle: "image",
+      heroVideoUrl: "",
       testimonials: [],
     };
   }
@@ -93,6 +107,8 @@ export async function getResolvedSettings(): Promise<ResolvedSettings> {
     mailtoHref: "mailto:" + email,
     heroHeadline: raw.heroHeadline.trim() || DEFAULT_HERO_HEADLINE,
     heroSubhead: raw.heroSubhead.trim() || DEFAULT_HERO_SUBHEAD,
+    heroStyle: raw.heroStyle,
+    heroVideoUrl: raw.heroVideoUrl.trim(),
     testimonials: cmsTestimonials.length ? cmsTestimonials : DEFAULT_TESTIMONIALS,
   };
 }
@@ -113,6 +129,8 @@ export async function updateSettings(input: RawSettings): Promise<void> {
     email: input.email.trim(),
     heroHeadline: input.heroHeadline.trim(),
     heroSubhead: input.heroSubhead.trim(),
+    heroStyle: input.heroStyle === "video" ? "video" : "image",
+    heroVideoUrl: input.heroVideoUrl.trim(),
     testimonials,
   };
   await db.siteSettings.upsert({

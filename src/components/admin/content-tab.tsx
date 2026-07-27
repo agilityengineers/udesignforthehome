@@ -10,6 +10,7 @@ import {
   BUSINESS,
 } from "@/lib/content";
 import type { RawSettings } from "@/lib/settings";
+import { parseVideoUrl } from "@/lib/video";
 
 /**
  * Site Content (CMS) tab. Edits the SiteSettings store; blank fields fall back
@@ -27,6 +28,16 @@ export function ContentTab({
   const [saving, setSaving] = useState(false);
 
   const t = [0, 1, 2].map((i) => settings.testimonials[i] ?? { quote: "", attribution: "" });
+
+  // Live feedback for the hero video URL.
+  const trimmedVideoUrl = settings.heroVideoUrl.trim();
+  const parsedVideo = trimmedVideoUrl ? parseVideoUrl(trimmedVideoUrl) : null;
+  const videoInvalid = trimmedVideoUrl !== "" && !parsedVideo;
+  const videoHintMessage = !trimmedVideoUrl
+    ? "Paste a YouTube or Vimeo link. It autoplays muted and loops, with player controls. Leave blank to keep the image hero."
+    : videoInvalid
+      ? "Couldn’t detect a YouTube or Vimeo link — the hero will use the image layout until this is a valid URL."
+      : `${parsedVideo!.provider === "youtube" ? "YouTube" : "Vimeo"} video detected. ✓`;
 
   function setTestimonial(i: number, patch: { quote?: string; attribution?: string }) {
     setSettings((prev) => {
@@ -68,6 +79,8 @@ export function ContentTab({
           email: "",
           heroHeadline: "",
           heroSubhead: "",
+          heroStyle: "image",
+          heroVideoUrl: "",
           testimonials: [],
         });
         setSaved(true);
@@ -124,8 +137,51 @@ export function ContentTab({
       {/* Hero */}
       <Card
         title="Hero"
-        hint="The first thing visitors see. Leave a field blank to use the original wording."
+        hint="The first thing visitors see. Leave the text fields blank to use the original wording."
       >
+        <label className="flex flex-col gap-1.5">
+          <Label>Hero Style</Label>
+          <select
+            value={settings.heroStyle}
+            onChange={(e) => {
+              setSettings((p) => ({
+                ...p,
+                heroStyle: e.target.value === "video" ? "video" : "image",
+              }));
+              setSaved(false);
+            }}
+            className="border border-ink/25 bg-transparent px-4 py-[14px] text-sm text-ink outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <option value="image">Image — full-screen background (current)</option>
+            <option value="video">
+              Video — two-column, copy left + video right
+            </option>
+          </select>
+        </label>
+
+        {settings.heroStyle === "video" && (
+          <label className="flex flex-col gap-1.5">
+            <Label>Video URL (YouTube or Vimeo)</Label>
+            <Input
+              value={settings.heroVideoUrl}
+              onChange={(e) => {
+                setSettings((p) => ({ ...p, heroVideoUrl: e.target.value }));
+                setSaved(false);
+              }}
+              placeholder="https://www.youtube.com/watch?v=…  or  https://vimeo.com/…"
+            />
+            {videoHintMessage && (
+              <span
+                className={`text-xs ${
+                  videoInvalid ? "text-danger" : "text-muted"
+                }`}
+              >
+                {videoHintMessage}
+              </span>
+            )}
+          </label>
+        )}
+
         <label className="flex flex-col gap-1.5">
           <Label>Headline</Label>
           <Input

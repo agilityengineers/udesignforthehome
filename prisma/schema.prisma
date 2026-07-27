@@ -41,6 +41,10 @@ model SiteSettings {
   email        String   @default("")
   heroHeadline String   @default("")
   heroSubhead  String   @default("")
+  /// "image" (full-bleed background, default) | "video" (two-column with embed)
+  heroStyle    String   @default("image")
+  /// YouTube or Vimeo URL, used when heroStyle = "video".
+  heroVideoUrl String   @default("")
   /// JSON-encoded array of { quote, attribution } (up to 3). Empty = defaults.
   testimonials String   @default("[]")
   updatedAt    DateTime @updatedAt

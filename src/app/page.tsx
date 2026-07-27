@@ -30,7 +30,12 @@ export default async function HomePage() {
       />
       <SiteHeader />
       <main>
-        <Hero headline={settings.heroHeadline} subhead={settings.heroSubhead} />
+        <Hero
+          headline={settings.heroHeadline}
+          subhead={settings.heroSubhead}
+          heroStyle={settings.heroStyle}
+          heroVideoUrl={settings.heroVideoUrl}
+        />
         <WillaDifference />
         <Products />
         <WhoWeServe />
