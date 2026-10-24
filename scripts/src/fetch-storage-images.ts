@@ -5,6 +5,9 @@
  * The URLs are signed Magnific links that expire on 2026-10-28. If they have
  * expired, open each creation on magnific.com and download it under the
  * file name listed here.
+ *
+ * media-wall, the three detail images, and the homepage row image are
+ * already committed as .webp files, so they are not listed.
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -23,11 +26,6 @@ const IMAGES: Record<string, string> = {
   "laundry.png": `${BASE}/5833669376/render.png?${EXP}ade343873c92f4e65dafeefffceca1188fab937514b24a6af409a655962ee975`,
   "mudroom.png": `${BASE}/5833669998/render.png?${EXP}7248bc0babffe9e6a351a679cac822ac73fcc576c0b08336da752903e9283801`,
   "wall-bed.png": `${BASE}/5833671179/render.png?${EXP}80e3721762521243033b0c30cc37067fbce1b54e3457e38620847cd9e20a112f`,
-  "media-wall.png": `${BASE}/5833670636/render.png?${EXP}113c8c8332a42fcdc186142656df67bdab7800469af651de6c7866e8d767c884`,
-  "detail-finishes.png": `${BASE}/5833670707/render.png?${EXP}dab4dd23397900f44ed5cad737c7ca4401f87bd54b86f0e1fe8ce54bf8ac8166`,
-  "detail-hardware.png": `${BASE}/5833670823/render.png?${EXP}15a5e0d211508bee799a7bda931f49f4dc6ed1700bb125894f6023d852d412e1`,
-  "detail-lighting.png": `${BASE}/5833671062/render.png?${EXP}823dcee1abe662a2e0ac7d7fb40e11871fd23ed788c2ca9b8e1dca4b4a8b2d09`,
-  "home-row.png": `${BASE}/5833671548/render.png?${EXP}6aac5b19a083d0aab0a5b98251db43364fdae5050194e7ab0d53316153fd16f4`,
 };
 
 const outDir = join(

@@ -28,6 +28,8 @@ export type ProductPage = {
   /** Optional heading shown above the item grid. */
   itemsEyebrow?: string;
   itemsH2?: string;
+  /** Optional note shown with the item grid, e.g. that photos are representative. */
+  imageNote?: string;
   items: ProductItem[];
   /** Optional "Finishes & Details" band. */
   details?: {
@@ -205,6 +207,8 @@ export const CLOSETS_AND_STORAGE: ProductPage = {
     "Book one visit for both. Willa can measure your windows and your closets in the same appointment, and bring finish samples for each.",
   itemsEyebrow: "Rooms We Design",
   itemsH2: "Storage for every room that holds your day together.",
+  imageNote:
+    "The photos on this page show the style of work we do. They are not finished client projects. Every system we build is designed with you during your consultation, around your rooms, your measurements, and the way you live, so your finished space will be uniquely yours.",
   items: [
     {
       name: "Walk-In Closets",
@@ -256,7 +260,7 @@ export const CLOSETS_AND_STORAGE: ProductPage = {
     },
     {
       name: "Entertainment Centers",
-      image: "/images/storage/media-wall.png",
+      image: "/images/storage/media-wall.webp",
       alt: "Built-in entertainment wall with shelving and lower cabinets",
       body: "Built-in wall units for the TV, books, and everything that collects around them. Doors and drawers keep the clutter out of view.",
     },
@@ -266,9 +270,9 @@ export const CLOSETS_AND_STORAGE: ProductPage = {
     h2: "The finishing touches you notice every morning.",
     body: "We bring finish samples to your consultation alongside your fabric and shutter samples, so the closet, the windows, and the room are chosen together.",
     images: [
-      { src: "/images/storage/detail-finishes.png", alt: "Wood-grain cabinet finish samples" },
-      { src: "/images/storage/detail-hardware.png", alt: "Brass drawer pull and a velvet-lined jewelry drawer" },
-      { src: "/images/storage/detail-lighting.png", alt: "LED lighting under a closet shelf" },
+      { src: "/images/storage/detail-finishes.webp", alt: "Wood-grain cabinet finish samples" },
+      { src: "/images/storage/detail-hardware.webp", alt: "Brass drawer pull and a velvet-lined jewelry drawer" },
+      { src: "/images/storage/detail-lighting.webp", alt: "LED lighting under a closet shelf" },
     ],
     specs: [
       { term: "Finishes", body: "Wood-grain and solid colors, from pale oak to deep walnut and painted white." },
@@ -289,5 +293,6 @@ export const CLOSETS_AND_STORAGE: ProductPage = {
       { title: "Installation", body: "Our installers fit the system, level every shelf, and leave the room clean." },
     ],
   },
-  imageCredit: null,
+  imageCredit:
+    "Images are representative of style. Final designs are created with each client during consultation.",
 };

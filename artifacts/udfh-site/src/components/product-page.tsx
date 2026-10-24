@@ -41,6 +41,11 @@ export function ProductPage({ data }: { data: ProductPageData }) {
                 <h2 className="m-0 font-serif text-[clamp(28px,3.4vw,40px)] font-medium leading-[1.15]">
                   {data.itemsH2}
                 </h2>
+                {data.imageNote && (
+                  <p className="m-0 mt-2 border-l-2 border-[var(--color-brass)] pl-4 text-sm italic leading-[1.7] text-[var(--color-muted)]">
+                    {data.imageNote}
+                  </p>
+                )}
               </div>
             </div>
           )}

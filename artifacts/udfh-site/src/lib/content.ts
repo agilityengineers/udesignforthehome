@@ -100,7 +100,7 @@ export const PRODUCT_ROWS = [
     body: "Custom storage designed with the same eye as your windows. We measure, design, and install systems for walk-in closets, garages, home offices, and every room in between.",
     href: "/closets-and-storage",
     linkLabel: "Learn More",
-    image: "/images/storage/home-row.png",
+    image: "/images/storage/home-row.webp",
     alt: "Organized custom closet seen through open doors from a bedroom",
   },
   {
