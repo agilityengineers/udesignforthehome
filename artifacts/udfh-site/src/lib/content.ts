@@ -95,6 +95,15 @@ export const PRODUCT_ROWS = [
     alt: "Motorized shades mid-descent in a modern great room",
   },
   {
+    eyebrow: "Closets & Custom Storage",
+    title: "Closets, pantries, and garages built to fit",
+    body: "Custom storage designed with the same eye as your windows. We measure, design, and install systems for walk-in closets, garages, home offices, and every room in between.",
+    href: "/closets-and-storage",
+    linkLabel: "Learn More",
+    image: "/images/storage/home-row.webp",
+    alt: "Organized custom closet seen through open doors from a bedroom",
+  },
+  {
     eyebrow: "Design Consultation",
     title: "Swatches mean nothing until they meet your light",
     body: "An in-home session covering color, fabric, and light planning, with real samples viewed in your actual rooms at the times of day you live in them. This is where the right answer becomes obvious.",
@@ -165,6 +174,7 @@ export const PROJECT_TYPES = [
   "Blinds & Shades",
   "Drapery & Soft Treatments",
   "Motorization & Smart Home",
+  "Closets & Custom Storage",
   "Not Sure Yet — Let's Talk",
 ] as const;
 

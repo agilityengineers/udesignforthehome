@@ -9,7 +9,7 @@ export function Products() {
         <div className="max-w-[640px]">
           <p className="eyebrow mb-3.5">Products &amp; Services</p>
           <h2 className="m-0 font-serif text-[clamp(32px,4vw,48px)] font-medium leading-[1.15]">
-            Four ways we dress a window. One standard of craft.
+            Windows, closets, and the rooms around them. One standard of craft.
           </h2>
         </div>
 

@@ -5,6 +5,16 @@ export type ProductItem = {
   body: string;
 };
 
+export type ProductDetail = {
+  term: string;
+  body: string;
+};
+
+export type ProductStep = {
+  title: string;
+  body: string;
+};
+
 export type ProductPage = {
   slug: string;
   metaTitle: string;
@@ -15,7 +25,28 @@ export type ProductPage = {
   heroAlt: string;
   ctaH2: string;
   ctaBody: string;
+  /** Optional heading shown above the item grid. */
+  itemsEyebrow?: string;
+  itemsH2?: string;
+  /** Optional note shown with the item grid, e.g. that photos are representative. */
+  imageNote?: string;
   items: ProductItem[];
+  /** Optional "Finishes & Details" band. */
+  details?: {
+    eyebrow: string;
+    h2: string;
+    body: string;
+    images: { src: string; alt: string }[];
+    specs: ProductDetail[];
+  };
+  /** Optional "How It Works" steps. */
+  steps?: {
+    eyebrow: string;
+    h2: string;
+    items: ProductStep[];
+  };
+  /** Footer credit line; defaults to the Norman credit. Pass null for none. */
+  imageCredit?: string | null;
 };
 
 export const HARD_WINDOW_TREATMENTS: ProductPage = {
@@ -160,4 +191,108 @@ export const MOTORIZATION: ProductPage = {
       body: "Rollers, honeycombs, and Romans with the cords designed out. Ideal for tall and hard-to-reach windows.",
     },
   ],
+};
+
+export const CLOSETS_AND_STORAGE: ProductPage = {
+  slug: "closets-and-storage",
+  metaTitle: "Closets & Custom Storage · U Design For The Home",
+  eyebrow: "Closets & Custom Storage",
+  h1: "A place for everything, built to fit your home.",
+  intro:
+    "We design custom closets, garages, pantries, and home offices with the same eye we bring to your windows. Every system is measured in your home, made to the inch, and installed by our team, so the room works as well as it looks.",
+  heroImage: "/images/storage/hero.png",
+  heroAlt: "Custom walk-in closet with a center island in warm oak and soft white",
+  ctaH2: "Let's design the room you'll open every day.",
+  ctaBody:
+    "Book one visit for both. Willa can measure your windows and your closets in the same appointment, and bring finish samples for each.",
+  itemsEyebrow: "Rooms We Design",
+  itemsH2: "Storage for every room that holds your day together.",
+  imageNote:
+    "The photos on this page show the style of work we do. They are not finished client projects. Every system we build is designed with you during your consultation, around your rooms, your measurements, and the way you live, so your finished space will be uniquely yours.",
+  items: [
+    {
+      name: "Walk-In Closets",
+      image: "/images/storage/walk-in.png",
+      alt: "Walk-in closet with double hanging, shoe shelves, drawers, and a bench",
+      body: "Double-hang, long-hang, shelving, and drawers laid out around how you dress. Add an island, a bench, or lighting that turns on with the door.",
+    },
+    {
+      name: "Reach-In Closets",
+      image: "/images/storage/reach-in.png",
+      alt: "Reach-in closet with a white organizer system",
+      body: "The everyday closet, reworked so nothing gets lost in the back. Often double the usable space of a single rod and shelf.",
+    },
+    {
+      name: "Garage Storage",
+      image: "/images/storage/garage.png",
+      alt: "Garage with wall-to-wall cabinets, wall panels, and a workbench",
+      body: "Cabinets, slatwall, and overhead racks that clear the floor and leave room for the car. Built to handle tools, gear, and the seasons.",
+    },
+    {
+      name: "Home Offices",
+      image: "/images/storage/office.png",
+      alt: "Built-in home office with a desk and floor-to-ceiling shelving",
+      body: "Desks, file drawers, and shelving sized to your room and the way you work. Cable management is designed in from the start.",
+    },
+    {
+      name: "Pantries",
+      image: "/images/storage/pantry.png",
+      alt: "Walk-in pantry with adjustable shelves and pull-out baskets",
+      body: "Adjustable shelves, pull-out baskets, and spice racks that put every can and canister in sight. Small pantries see the biggest change.",
+    },
+    {
+      name: "Laundry Rooms",
+      image: "/images/storage/laundry.png",
+      alt: "Laundry room with sage cabinets and a wood folding counter",
+      body: "Cabinets above, a folding counter between, and hampers that hide away. A hardworking room that finally has a plan.",
+    },
+    {
+      name: "Mudrooms & Entryways",
+      image: "/images/storage/mudroom.png",
+      alt: "Mudroom with built-in lockers, hooks, and a bench",
+      body: "Cubbies, hooks, and a bench at the door, one per person. Backpacks, boots, and keys land in the same place every day.",
+    },
+    {
+      name: "Wall Beds",
+      image: "/images/storage/wall-bed.png",
+      alt: "Guest room with an open fold-down wall bed and built-in shelving",
+      body: "A full guest room that folds into the wall when you need the space back. Pairs well with an office or a media room.",
+    },
+    {
+      name: "Entertainment Centers",
+      image: "/images/storage/media-wall.webp",
+      alt: "Built-in entertainment wall with shelving and lower cabinets",
+      body: "Built-in wall units for the TV, books, and everything that collects around them. Doors and drawers keep the clutter out of view.",
+    },
+  ],
+  details: {
+    eyebrow: "Finishes & Details",
+    h2: "The finishing touches you notice every morning.",
+    body: "We bring finish samples to your consultation alongside your fabric and shutter samples, so the closet, the windows, and the room are chosen together.",
+    images: [
+      { src: "/images/storage/detail-finishes.webp", alt: "Wood-grain cabinet finish samples" },
+      { src: "/images/storage/detail-hardware.webp", alt: "Brass drawer pull and a velvet-lined jewelry drawer" },
+      { src: "/images/storage/detail-lighting.webp", alt: "LED lighting under a closet shelf" },
+    ],
+    specs: [
+      { term: "Finishes", body: "Wood-grain and solid colors, from pale oak to deep walnut and painted white." },
+      { term: "Doors & Fronts", body: "Shaker, flat, and framed glass doors, with soft-close hinges and drawer glides." },
+      { term: "Hardware", body: "Knobs and pulls in brushed brass, nickel, and matte black." },
+      { term: "Lighting", body: "Integrated LED strips and rod lights that switch on with the door." },
+      { term: "Accessories", body: "Belt and tie racks, valet rods, velvet-lined jewelry drawers, and pull-out hampers." },
+      { term: "Countertops", body: "Tops for islands, desks, and laundry folding stations." },
+    ],
+  },
+  steps: {
+    eyebrow: "How It Works",
+    h2: "From the first measurement to the last shelf pin.",
+    items: [
+      { title: "In-Home Consultation", body: "We visit, measure, and talk through what the space needs to hold and how you use it." },
+      { title: "Design", body: "You see a layout drawn to your room's dimensions, with finishes and accessories chosen together." },
+      { title: "Made to Order", body: "Every panel is cut to your measurements. Nothing is off the shelf." },
+      { title: "Installation", body: "Our installers fit the system, level every shelf, and leave the room clean." },
+    ],
+  },
+  imageCredit:
+    "Images are representative of style. Final designs are created with each client during consultation.",
 };

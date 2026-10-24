@@ -3,6 +3,7 @@ import HomePage from "@/pages/home";
 import HardWindowTreatmentsPage from "@/pages/hard-window-treatments";
 import SoftWindowTreatmentsPage from "@/pages/soft-window-treatments";
 import MotorizationPage from "@/pages/motorization";
+import ClosetsAndStoragePage from "@/pages/closets-and-storage";
 import PrivacyPage from "@/pages/privacy";
 import TermsPage from "@/pages/terms";
 import AdminPage from "@/pages/admin";
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/hard-window-treatments" component={HardWindowTreatmentsPage} />
       <Route path="/soft-window-treatments" component={SoftWindowTreatmentsPage} />
       <Route path="/motorization" component={MotorizationPage} />
+      <Route path="/closets-and-storage" component={ClosetsAndStoragePage} />
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/admin" component={AdminPage} />
